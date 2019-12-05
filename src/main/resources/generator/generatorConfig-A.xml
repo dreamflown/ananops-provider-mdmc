@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="config.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple"
+             defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}" userId="${jdbc.user}" password="${jdbc.password}">
+        </jdbcConnection>
+
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.ananops.provider.model.domain"
+                            targetProject="src/main/java">
+            <!--如果true，MBG会根据catalog和schema来生成子包。如果false就会直接用targetPackage属性-->
+            <property name="enableSubPackages" value="false"/>
+            <!--是否对数据库查询结果进行trim操作-->
+            <property name="trimStrings" value="true"/>
+            <!--该属性用来配置实体类属性是否可变，如果设置为true，-->
+            <!--那么constructorBased不管设置成什么，都会使用构造方法入参，并且不会生成setter方法-->
+            <property name="immutable" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置 -->
+        <sqlMapGenerator targetPackage="resources/mappers"
+                         targetProject="src/main"/>
+
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator targetPackage="com.ananops.provider.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <!-- 设置要生成代码的表 -->
+        <table tableName="mdmc_task" domainObjectName="MdmcTask">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <table tableName="mdmc_task_item" domainObjectName="MdmcTaskItem">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        </context>
+    </generatorConfiguration>

@@ -5,28 +5,31 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="version" property="version" jdbcType="INTEGER" />
-    <result column="creator" property="creator" jdbcType="VARCHAR" />
-    <result column="creator_id" property="creatorId" jdbcType="BIGINT" />
-    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
-    <result column="last_operator" property="lastOperator" jdbcType="VARCHAR" />
-    <result column="last_operator_id" property="lastOperatorId" jdbcType="BIGINT" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="principal_id" property="principalId" jdbcType="BIGINT" />
-    <result column="project_id" property="projectId" jdbcType="BIGINT" />
-    <result column="facilitator_id" property="facilitatorId" jdbcType="BIGINT" />
-    <result column="maintainer_id" property="maintainerId" jdbcType="BIGINT" />
-    <result column="scheduled_finish_time" property="scheduledFinishTime" jdbcType="TIMESTAMP" />
-    <result column="actual_finish_time" property="actualFinishTime" jdbcType="TIMESTAMP" />
-    <result column="scheduled_start_time" property="scheduledStartTime" jdbcType="TIMESTAMP" />
-    <result column="actual_start_time" property="actualStartTime" jdbcType="TIMESTAMP" />
-    <result column="deadline" property="deadline" jdbcType="TIMESTAMP" />
-    <result column="request_latitude" property="requestLatitude" jdbcType="DECIMAL" />
-    <result column="request_longitude" property="requestLongitude" jdbcType="DECIMAL" />
-    <result column="status" property="status" jdbcType="INTEGER" />
-    <result column="total_cost" property="totalCost" jdbcType="DECIMAL" />
-    <result column="clearing_form" property="clearingForm" jdbcType="INTEGER" />
+    <constructor >
+      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="version" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="creator" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="creator_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="created_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="last_operator" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="last_operator_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="user_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="principal_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="project_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="facilitator_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="maintainer_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="scheduled_finish_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="actual_finish_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="scheduled_start_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="actual_start_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="deadline" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="request_latitude" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="request_longitude" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="total_cost" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="clearing_form" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
   </resultMap>
 </mapper>

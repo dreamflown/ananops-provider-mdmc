@@ -3,6 +3,7 @@ package com.ananops.provider.core;
 import com.ananops.provider.config.SwaggerProperties;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -19,6 +20,7 @@ import java.util.List;
 /**
  * Created by rongshuai on 2019/11/27 12:49
  */
+@Configuration
 @EnableSwagger2//启动Swagger2
 public class SwaggerConfiguration {
 

@@ -4,15 +4,14 @@ import com.ananops.provider.model.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Table(name = "mdmc_task_item")
 public class MdmcTaskItem extends BaseEntity {
-    private static final long serialVersionUID = 8703161772645802101L;
     /**
      * 任务ID
      */
@@ -24,6 +23,12 @@ public class MdmcTaskItem extends BaseEntity {
      */
     @Column(name = "device_id")
     private Long deviceId;
+
+    /**
+     * 设备名称
+     */
+    @Column(name = "device_name")
+    private String deviceName;
 
     /**
      * 完成维修的时间戳

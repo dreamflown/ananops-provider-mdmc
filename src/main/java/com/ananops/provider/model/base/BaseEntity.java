@@ -50,7 +50,7 @@ public class BaseEntity implements Serializable {
     private String lastOperator;
 
     /**
-     * 最后操作人Id
+     * 最近操作人Id
      */
     @Column(name = "last_operator_id")
     private Long lastOperatorId;

@@ -14,7 +14,7 @@ import java.util.Date;
 public class MdmcDevice extends BaseEntity {
     private static final long serialVersionUID = 8604444743573834036L;
     /**
-     * 设别型号
+     * 设备型号
      */
     @Column(name = "device_model")
     private String deviceModel;

@@ -1,15 +1,14 @@
 package com.ananops.provider.web.frontend;
 
 import com.ananops.provider.model.domain.MdmcTask;
-import com.ananops.provider.model.dto.MdmcCreateTaskDto;
+import com.ananops.provider.model.dto.MdmcApproveInfoDto;
+import com.ananops.provider.model.dto.MdmcOrderDto;
 import com.ananops.provider.service.MdmcTaskService;
 import com.ananops.provider.utils.WrapMapper;
 import com.ananops.provider.utils.Wrapper;
-import com.google.gson.JsonObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,22 +18,46 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * Created by rongshuai on 2019/11/27 13:57
+ * Created by zhs on 2019/12/5 13:57
  */
 @RestController
-@RequestMapping(value = "/task",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "ananops/api/v1/task",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @Api(value = "WEB - MdmcAddDevice",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MdmcTaskHandler {
     @Resource
-    MdmcTaskService mdmcTaskService;
+    MdmcTaskService taskService;
 
-    @PostMapping(value = "/save")
-    @ApiOperation(httpMethod = "POST",value = "新增一条维修申请任务记录")
-    public Wrapper<String> saveTask(@ApiParam(name = "saveTask",value = "新增一条维修申请任务记录") @RequestBody MdmcCreateTaskDto mdmcCreateTaskDto){
-        MdmcTask mdmcTask = new MdmcTask();
-        BeanUtils.copyProperties(mdmcCreateTaskDto,mdmcTask);
-        Integer result = mdmcTaskService.createTask(mdmcTask);
-        return WrapMapper.ok(result.toString());
+    @PostMapping(value = "/submit/{taskId}")
+    @ApiOperation(httpMethod = "POST",value = "提交维修任务申请")
+    public Wrapper<String> submit(@ApiParam(name = "submitTask",value = "提交维修任务申请") @RequestBody MdmcOrderDto order){
+        try {
+            String res = taskService.submitTask(order);
+            if (!res.equals("success")) {
+                return WrapMapper.error(res);
+            }
+        } catch (Exception e){
+            return WrapMapper.error(e.getMessage());
+        }
+        return WrapMapper.ok("success");
+    }
+
+    @PostMapping(value = "/approve")
+    @ApiOperation(httpMethod = "POST", value = "审核维修申请")
+    public Wrapper<String> approve(@ApiParam(name = "approve task", value = "审核维修申请") @RequestBody MdmcApproveInfoDto data) {
+        String res = "fail";
+        try {
+            if (data.getApproveResult().equals("pass")){
+                res = taskService.leaderApprovePass(data);
+            } else if (data.getApproveResult().equals("fail")) {
+                res = taskService.leaderApproveFail();
+            } else {
+                return WrapMapper.illegalArgument();
+            }
+
+        } catch (Exception e) {
+            return WrapMapper.error(e.getMessage());
+        }
+        return WrapMapper.ok(res);
     }
 
 }

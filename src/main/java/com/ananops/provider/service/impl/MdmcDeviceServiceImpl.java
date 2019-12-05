@@ -3,7 +3,6 @@ package com.ananops.provider.service.impl;
 import com.ananops.provider.mapper.MdmcDeviceMapper;
 import com.ananops.provider.model.domain.MdmcDevice;
 import com.ananops.provider.service.MdmcDeviceService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

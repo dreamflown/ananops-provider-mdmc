@@ -1,5 +1,5 @@
 server:
-  port: 8100
+  port: 8080
 spring:
   application:
     name: ananops-provider-mdmc
@@ -11,9 +11,9 @@ spring:
   cache:
     cache-names: mdm-cache
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/ananops_mdmc?characterEncoding=utf8&useSSL=false&serverTimezone=GMT&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://127.0.0.1:3306/ananops?characterEncoding=utf8&useSSL=false&serverTimezone=GMT&zeroDateTimeBehavior=convertToNull
     username: root
-    password: 123456
+    password: admin123
 pagehelper:
   helperDialect: mysql
   reasonable: true

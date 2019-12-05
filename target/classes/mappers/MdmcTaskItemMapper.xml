@@ -5,25 +5,28 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="version" property="version" jdbcType="INTEGER" />
-    <result column="creator" property="creator" jdbcType="VARCHAR" />
-    <result column="creator_id" property="creatorId" jdbcType="BIGINT" />
-    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
-    <result column="last_operator" property="lastOperator" jdbcType="VARCHAR" />
-    <result column="last_operator_id" property="lastOperatorId" jdbcType="BIGINT" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="task_id" property="taskId" jdbcType="BIGINT" />
-    <result column="device_id" property="deviceId" jdbcType="BIGINT" />
-    <result column="actual_finish_time" property="actualFinishTime" jdbcType="TIMESTAMP" />
-    <result column="actual_start_time" property="actualStartTime" jdbcType="TIMESTAMP" />
-    <result column="description" property="description" jdbcType="VARCHAR" />
-    <result column="level" property="level" jdbcType="INTEGER" />
-    <result column="device_latitude" property="deviceLatitude" jdbcType="DECIMAL" />
-    <result column="device_longitude" property="deviceLongitude" jdbcType="DECIMAL" />
-    <result column="maintainer_id" property="maintainerId" jdbcType="BIGINT" />
-    <result column="status" property="status" jdbcType="INTEGER" />
-    <result column="suggestion" property="suggestion" jdbcType="VARCHAR" />
-    <result column="result" property="result" jdbcType="VARCHAR" />
+    <constructor >
+      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="version" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="creator" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="creator_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="created_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="last_operator" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="last_operator_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="task_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="device_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="device_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="actual_finish_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="actual_start_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="description" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="level" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="device_latitude" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="device_longitude" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="maintainer_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="suggestion" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="result" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
   </resultMap>
 </mapper>
