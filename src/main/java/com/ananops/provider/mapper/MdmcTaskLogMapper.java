@@ -8,4 +8,5 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component
 public interface MdmcTaskLogMapper extends MyMapper<MdmcTaskLog> {
+    MdmcTaskLog selectLatestByTaskId(Long taskId);
 }

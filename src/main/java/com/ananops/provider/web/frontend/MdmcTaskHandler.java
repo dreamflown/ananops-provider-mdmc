@@ -1,6 +1,5 @@
 package com.ananops.provider.web.frontend;
 
-import com.ananops.provider.model.domain.MdmcTask;
 import com.ananops.provider.model.dto.MdmcApproveInfoDto;
 import com.ananops.provider.model.dto.MdmcOrderDto;
 import com.ananops.provider.service.MdmcTaskService;
@@ -10,10 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -49,7 +45,7 @@ public class MdmcTaskHandler {
             if (data.getApproveResult().equals("pass")){
                 res = taskService.leaderApprovePass(data);
             } else if (data.getApproveResult().equals("fail")) {
-                res = taskService.leaderApproveFail();
+                res = taskService.leaderApproveFail(data);
             } else {
                 return WrapMapper.illegalArgument();
             }
@@ -59,5 +55,26 @@ public class MdmcTaskHandler {
         }
         return WrapMapper.ok(res);
     }
+
+    @PostMapping(value = "/takeTask")
+    @ApiOperation(httpMethod = "POST", value = "服务提供商接单")
+    public Wrapper<String> takeOrder(@ApiParam(name = "taskId", value = "任务ID") @RequestParam Long taskId,
+                                     @ApiParam(name = "facilitatorId", value = "服务提供商ID") @RequestParam Long facilitatorId,
+                                     @ApiParam(name = "op", value = "操作") @RequestParam int operation) {
+        String res = "fail";
+        try {
+            if (operation <= 1) {
+                res = taskService.serviceProviderReceiveTask(taskId, facilitatorId,operation);
+            } else {
+                return WrapMapper.illegalArgument();
+            }
+
+        } catch (Exception e) {
+            return WrapMapper.error(e.getMessage());
+        }
+        return WrapMapper.ok(res);
+    }
+
+
 
 }

@@ -1,55 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java" line="246" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="239906d6-6c55-4b79-8525-8fd2783bdfb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ananops-provider-mdmc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcApproveInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcDeviceInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcDeviceOrderInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderOperationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcProcessInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTaskItemDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTroubleInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/enums/PayTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcOrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig-A.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig-B.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="239906d6-6c55-4b79-8525-8fd2783bdfb2" name="Default Changelist" comment="update by zhs 20191205">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/core/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/core/SwaggerConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTaskItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTaskItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/enums/MdmTaskStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/enums/MdmcTaskStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcDeviceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcDeviceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/utils/Wrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/utils/Wrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ananops/provider/web/frontend/MdmcTaskHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ananops/provider/web/frontend/MdmcTaskHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ananops-provider-mdmc.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/core/SwaggerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/core/SwaggerConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/model/domain/MdmcTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/model/domain/MdmcTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/model/domain/MdmcTaskItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/model/domain/MdmcTaskItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/model/enums/MdmTaskStatusEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/service/MdmcTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/service/MdmcTaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/service/impl/MdmcDeviceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/service/impl/MdmcDeviceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/service/impl/MdmcTaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/service/impl/MdmcTaskServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/utils/Wrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/utils/Wrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ananops/provider/web/frontend/MdmcTaskHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ananops/provider/web/frontend/MdmcTaskHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/MdmcTaskItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/MdmcTaskItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/MdmcTaskMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/MdmcTaskMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskLogMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,26 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MdmcOrderDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MdmcTaskHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MdmcTaskHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/web/frontend/MdmcTaskHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="50">
+              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -92,32 +40,8 @@
       <file leaf-file-name="MdmcTaskService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MdmcOrderOperationDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderOperationDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MdmcTaskItemDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTaskItemDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="18" selection-start-line="18" selection-end-line="19" />
+            <state relative-caret-position="775">
+              <caret line="33" column="72" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,20 +52,8 @@
       <file leaf-file-name="MdmcTaskServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="114" column="29" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MdmcProcessInfoDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcProcessInfoDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+            <state relative-caret-position="11375">
+              <caret line="476" column="78" selection-start-line="476" selection-start-column="49" selection-end-line="476" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,7 +64,7 @@
       <file leaf-file-name="MdmcApproveInfoDto.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcApproveInfoDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
+            <state relative-caret-position="550">
               <caret line="26" selection-start-line="26" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -161,11 +73,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MdmcDeviceInfoDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcDeviceInfoDto.java">
+      <file leaf-file-name="MdmcCreateTaskDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcCreateTaskDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="12" selection-start-line="12" selection-end-line="13" />
+            <state relative-caret-position="550">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MdmcTaskLogMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,11 +94,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MdmcDeviceOrderInfoDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcDeviceOrderInfoDto.java">
+      <file leaf-file-name="MdmcProcessInfoDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcProcessInfoDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="325">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MdmcTroubleInfoDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTroubleInfoDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MdmcOrderDto.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MdmcTaskItemDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTaskItemDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="18" selection-start-line="18" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,6 +161,9 @@
       <find>orderMap</find>
       <find>order</find>
       <find>json</find>
+      <find>deviceName</find>
+      <find>dispatchTask</find>
+      <find>status.</find>
     </findStrings>
     <replaceStrings>
       <replace>order</replace>
@@ -219,6 +176,7 @@
       <replace>taskCache</replace>
       <replace>task</replace>
       <replace>approveInfo</replace>
+      <replace>MdmcTaskStatusEnum.</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -227,9 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemLogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ananops/utils/Wrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/common/utils/Wrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/utils/WrapMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/config/SwaggerProperties.java" />
@@ -268,16 +223,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/enums/MdmcTaskStatusEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/enums/PayTypeEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/utils/Wrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/core/SwaggerConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTaskItemDto.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcApproveInfoDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskItemMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskLogMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/web/frontend/MdmcTaskHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -328,10 +286,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="-10" />
-    <option name="width" value="1860" />
-    <option name="height" value="1099" />
+    <option name="x" value="-15" />
+    <option name="y" value="190" />
+    <option name="width" value="1940" />
+    <option name="height" value="655" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -340,6 +298,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -475,6 +435,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ananops-provider-mdmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ananops-provider-mdmc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -497,15 +466,21 @@
             <path>
               <item name="ananops-provider-mdmc" type="b2602c69:ProjectViewProjectNode" />
               <item name="ananops-provider-mdmc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ananops-provider-mdmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ananops-provider-mdmc" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -584,12 +559,21 @@
       <option name="presentableId" value="Default" />
       <updated>1574740033017</updated>
       <workItem from="1575466040482" duration="10602000" />
-      <workItem from="1575509335204" duration="26025000" />
+      <workItem from="1575509335204" duration="33941000" />
+      <workItem from="1575554319435" duration="1519000" />
     </task>
+    <task id="LOCAL-00001" summary="update by zhs 20191205">
+      <created>1575538816204</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575538816204</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36627000" />
+    <option name="totallyTimeSpent" value="46062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-7" width="1488" height="878" extended-state="6" />
@@ -608,20 +592,18 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986014" weight="0.36437246" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32928476" />
       <window_info anchor="right" id="Palette&#9;" order="12" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="right" id="Capture Analysis" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993007" weight="0.37921727" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28741258" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2916084" />
       <window_info anchor="right" id="Bean Validation" order="7" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="BPMNPalette" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -629,6 +611,8 @@
       <window_info anchor="right" id="Maven" order="6" weight="0.18297587" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="PlantUML" order="10" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32928476" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Stack trace to UML" order="7" side_tool="true" />
@@ -643,6 +627,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993007" weight="0.37921727" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="8" />
@@ -658,19 +643,18 @@
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.0993007" />
-      <window_info anchor="bottom" id="Stack trace to UML" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28741258" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32928476" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Stack trace to UML" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="Palette&#9;" order="12" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986014" weight="0.36437246" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
       <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986014" weight="0.36437246" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,12 +663,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update by zhs 20191205" />
+    <option name="LAST_COMMIT_MESSAGE" value="update by zhs 20191205" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java</url>
-          <line>161</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -693,64 +681,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTroubleInfoDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcCreateTaskDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcDeviceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcDeviceOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
@@ -765,20 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generator/generatorConfig-A.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcReview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Java/jdk8u181/src.zip!/java/lang/Long.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12362">
@@ -786,42 +702,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/IdGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/IncrementIdGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2210#2211#0" expanded="true" />
-            <element signature="e#2228#2229#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/UniqueIdGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2327">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/IdGenerator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/IncrementIdGenerator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/base/UniqueIdGenerator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/enums/MdmcTaskStatusEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-          <folding>
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,12 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#149#150#0" expanded="true" />
-            <element signature="e#176#177#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -847,13 +728,6 @@
             <element signature="e#1612#1613#0" expanded="true" />
             <element signature="e#1650#1651#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTaskLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -875,10 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="119" column="33" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
-          <folding>
-            <element signature="e#2570#2571#0" expanded="true" />
-            <element signature="e#2608#2609#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,13 +759,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -927,12 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="496" column="25" selection-start-line="496" selection-start-column="25" selection-end-line="496" selection-end-column="25" />
-          <folding>
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#17514#17515#0" expanded="true" />
-            <element signature="e#17549#17550#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -957,9 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
           <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -974,19 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" selection-start-line="7" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,16 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1039,6 +870,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generator/generatorConfig-A.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="42" column="63" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcReview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven-repo/tk/mybatis/mapper/3.4.0/mapper-3.4.0.jar!/tk/mybatis/mapper/common/base/select/SelectAllMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskItemMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTaskLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderOperationDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcDeviceOrderInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" selection-start-line="17" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1055,20 +945,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcProcessInfoDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+        <state relative-caret-position="300">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/domain/MdmcOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ananops.sql" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/MdmcTaskLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/mapper/MdmcTaskLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcDeviceOrderInfoDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/web/frontend/MdmcTaskHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="50">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="33" column="72" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTroubleInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTaskItemDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" selection-start-line="18" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcCreateTaskDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcProcessInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="476" column="78" lean-forward="true" selection-start-line="476" selection-start-column="49" selection-end-line="476" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1077,7 +1040,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcApproveInfoDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
+        <state relative-caret-position="516">
           <caret line="26" selection-start-line="26" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1087,58 +1050,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/MdmcTaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/service/impl/MdmcTaskServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="114" column="29" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcTaskItemDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="18" selection-start-line="18" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/model/dto/MdmcOrderOperationDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ananops/provider/web/frontend/MdmcTaskHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="400">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

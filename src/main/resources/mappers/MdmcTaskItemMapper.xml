@@ -29,4 +29,9 @@
       <arg column="result" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+
+  <select id="selectByTaskId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select * from mdmc_task_item where `task_id`=#{taskId}
+  </select>
+
 </mapper>

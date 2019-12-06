@@ -18,4 +18,9 @@
     <result column="movement" property="movement" jdbcType="VARCHAR" />
     <result column="status_timestamp" property="statusTimestamp" jdbcType="TIMESTAMP" />
   </resultMap>
+
+  <select id="selectLatestByTaskId">
+    select * from mdmc_task_log where `task_id` = #{taskId}
+    order by `update_time` limit 1;
+  </select>
 </mapper>

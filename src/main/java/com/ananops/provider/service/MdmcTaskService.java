@@ -19,19 +19,19 @@ public interface MdmcTaskService {
 
     String leaderApprovePass(MdmcApproveInfoDto approveInfo) throws Exception;
 
-//    void leaderApproveFail(String data);
-//
+    String leaderApproveFail(MdmcApproveInfoDto approveInfo) throws Exception;
+
 //    void cancelTask(String data);
-//
-//    void serviceProviderReceiveTask(String data);
-//
-//    void serviceProviderRejectTask(String data);
-//
-//    void maintenanceWorkerReceiveTask(String data);
-//
-//    void maintenanceWorkerRejectTask(String data);
-//
-//    void maintenanceWorkerEnsureService(String data);
+
+    String serviceProviderReceiveTask(Long taskId, Long fId, int op);
+
+//    String serviceProviderRejectTask(Long taskId, Long fId, int op);
+
+    String  maintenanceWorkerReceiveTask(Long taskId, Long mId, int op);
+
+    String  maintenanceWorkerRejectTask(Long taskId, Long mId, int op);
+
+    String maintenanceWorkerEnsureService(Long taskId, Long mId, int op);
 //
 //    void maintenanceWorkerExchangeTask(String data);
 //
@@ -52,7 +52,7 @@ public interface MdmcTaskService {
 //    void leaderRejectPay(String data);
 //
 //    void evaluate(String data);
-//
-//    Long dispatchTask(Long taskId);
+
+    Long dispatchTask(Long taskId);
 
 }

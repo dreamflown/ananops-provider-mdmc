@@ -10,10 +10,9 @@ import com.ananops.provider.model.dto.MdmcOrderDto;
 import com.ananops.provider.model.dto.MdmcTaskItemDto;
 import com.ananops.provider.model.enums.MdmcTaskStatusEnum;
 import com.ananops.provider.service.MdmcTaskService;
+import com.google.gson.JsonObject;
 import com.sun.istack.internal.NotNull;
-import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -80,7 +79,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
             taskCache = taskMapper.selectByPrimaryKey(taskId);
             if (taskCache != null) {
                 synchronized (taskMap) {
-                    taskMapper.insert(taskCache);`
+                    taskMapper.insert(taskCache);
                 }
             }
         }
@@ -232,49 +231,60 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
             return String.format("维修工单%s不存在", taskId);
         }
 
-        Long principalId = approveInfo.getApproverId();       // 负责人id
+        Long principalId = approveInfo.getApproverId();
         Long uId = approveInfo.getProposerId();                                    // 报修用户id
-        String approveReult = approveInfo.getApproveMsg();      // 审核意见
+        String approveReult = approveInfo.getApproveMsg();
+        String approveMsg = approveInfo.getApproveMsg();
 
-        // 给报修用户发送消息
-        new AuditResultMsg().send(leaderId, uId, task, auditComments);
-        // 给服务提供商发送消息
-        new ToLeaderMsg<MdmcTask>().send(leaderId, SPid, task);
+        MdmcTaskLog taskLog = new MdmcTaskLog();
+        User user = new User().getUserInfo(); // todo 审核人信息
+        taskLog.setLastOperatorId(user.getUId());
+        taskLog.setLastOperator(user.getName());
+        taskLog.setMovement(String.format("审核%s:%s", approveReult, approveMsg));
+        taskLogMapper.insertSelective(taskLog);
+        log.info("维修任务{}申请{}，审核意见:{}", taskId, approveReult, approveMsg);
 
-        // 记录此次操作,工单状态追踪
-        Operation op = new Operation();
-        op.setOperator(leaderId);
-        op.setTaskId(taskId);
-        op.setInfo("维修任务审批通过");
-        opService.logger(op);
+        List<MdmcTaskItem> items = itemMapper.selectByTaskId(taskId);
+        for (MdmcTaskItem item : items) {
+            item.setStatus(task.getStatus());
+        }
 
+        return "success";
     }
-//
-//    @Override
-//    public void leaderApproveFail(String data) {
-//        JsonObject approveInfo = new JsonParser().parse(data).getAsJsonObject();
-//
-//        // 获取工单信息, 工单状态退回申请中
-//        Long taskId = approveInfo.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.ShenQing);
-//        if (task == null) {
-//            return;
-//        }
-//
-//        Long leaderId = approveInfo.get("leaderId").getAsLong();   // 负责人id
-//        Long uId = task.getUId();                                // 报修用户id
-//        String auditComments = approveInfo.get("auditComment").getAsString();  // 审核意见
-//
-//        // 给报修用户发送消息
-//        new AuditResultMsg().send(leaderId, uId, task, auditComments);
-//
-//        // 记录此次操作,工单状态追踪
-//        Operation op = new Operation();
-//        op.setOperator(leaderId);
-//        op.setTaskId(taskId);
-//        op.setInfo("维修任务审批驳回");
-//        opService.logger(op);
-//    }
+
+    @Override
+    public String leaderApproveFail(MdmcApproveInfoDto approveInfo) throws Exception {
+
+        // 获取工单信息，工单状态变为待执行
+        @NotNull
+        Long taskId = approveInfo.getTaskId();
+        MdmcTask task = changeTaskStatus(taskId, MdmcTaskStatusEnum.ShenQing.getType());
+        if (task == null) {
+            log.error("维修工单{}不存在", taskId);
+            return String.format("维修工单%s不存在", taskId);
+        }
+
+        Long principalId = approveInfo.getApproverId();
+        Long uId = approveInfo.getProposerId();                                    // 报修用户id
+        String approveReult = approveInfo.getApproveMsg();
+        String approveMsg = approveInfo.getApproveMsg();
+
+        User user = new User().getUserInfo(); // todo 审核人信息
+        MdmcTaskLog taskLog = new MdmcTaskLog();
+        taskLog.setLastOperatorId(user.getUId());
+        taskLog.setLastOperator(user.getName());
+        taskLog.setMovement(String.format("审核%s:%s", approveReult, approveMsg));
+        taskLogMapper.insertSelective(taskLog);
+        log.info("维修任务{}申请{}，审核意见:{}", taskId, approveReult, approveMsg);
+
+        List<MdmcTaskItem> items = itemMapper.selectByTaskId(taskId);
+        for (MdmcTaskItem item : items) {
+            item.setStatus(task.getStatus());
+            itemMapper.updateByPrimaryKeySelective(item);
+        }
+
+        return "success";
+    }
 //
 //    @Override
 //    public void cancelTask(String data) {
@@ -311,56 +321,55 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //    }
 //
-//    @Override
-//    public void serviceProviderReceiveTask(String data) {
-//
-//        JsonObject json = new JsonParser().parse(data).getAsJsonObject();
-//
-//        // 获取工单信息
-//        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.getTaskInfo(taskId);
-//        if (task == null) {
-//            return;
-//        }
-//
-//        // 派发任务:根据服务提供商和报修单位签订的合同，以及履行改合同义务的维修列表，指派维修工
-//        Long SPId = json.get("SPId").getAsLong();
-////        Long leaderId = json.get("leaderId").getAsLong();
-//        Long workerId = dispatchTask(taskId);  // TODO 派发任务
-//        if (workerId == null) {
-//            System.out.println("维修工正忙，请联系服务提供商更换维修工");
-//        }
-//        for (MdmcTask task: task.getTaskList()){
-//            task.setWorkerId(workerId);
-//        }
-//
-//        // 计划完成时间，接单时间加一周
-//        Calendar cal = Calendar.getInstance();
-//        cal.setTime(new Date());
-//        cal.add(Calendar.DAY_OF_WEEK, 1); //增加一周
-//        Timestamp ddl = new Timestamp(cal.getTime().getTime()); // 计划完成时间
-//        task.setDdl(ddl);
-//        task = taskService.saveTask(task);
-//
-//        // 工单状态变为待执行
-//        task = taskService.changeTaskStatus(taskId, status.ZhiXing);
-//
-//
-//        // 给用户发送消息
-//        Long uId = task.getUId();  // 报修用户id
-//        new ToLeaderMsg<MdmcTask>().send(SPId, uId, task);
-//        // 给维修工发消息
-//        new ToLeaderMsg<MdmcTask>().send(SPId, workerId, task);
-//
-//        // 记录此次操作，工单状态追踪
-//        Operation op = new Operation();
-//        op.setOperator(SPId);
-//        op.setTaskId(taskId);
-//        op.setInfo("服务提供商已接单");
-//        opService.logger(op);
-//
-//    }
-//
+    @Override
+    public String serviceProviderReceiveTask(Long taskId, Long fId, int op) {
+
+        // 获取工单信息
+        MdmcTask task = getTaskInfo(taskId);
+        if (task == null) {
+            log.error("维修工单{}不存在", taskId);
+            return String.format("维修工单%s不存在", taskId);
+        }
+
+        if (op != 0) {
+            // 服务商拒接任务
+            return "服务商拒接单";
+        }
+
+        // 派发任务:根据服务提供商和报修单位签订的合同，以及履行改合同义务的维修列表，指派维修工
+        Long workerId = dispatchTask(taskId);  // TODO 派发任务
+        if (workerId == null) {
+            log.info("维修工正忙，请联系服务提供商更换维修工");
+        }
+        task.setMaintainerId(workerId);
+        List<MdmcTaskItem> taskItems = itemMapper.selectByTaskId(taskId);
+        for (MdmcTaskItem item: taskItems){
+            item.setMaintainerId(workerId);
+            item.setStatus(MdmcTaskStatusEnum.ZhiXing.getType());
+            itemMapper.updateByPrimaryKeySelective(item);
+        }
+
+        // 最晚完成时间，接单时间加一周
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.DAY_OF_WEEK, 1); //增加一周
+        task.setDeadline(cal.getTime());
+
+        // 工单状态变为待执行
+        task.setStatus(MdmcTaskStatusEnum.ZhiXing.getType());
+        task = saveTask(task);
+
+        User user = new User().getUserInfo(); // todo 审核人信息
+        MdmcTaskLog taskLog = new MdmcTaskLog();
+        taskLog.setLastOperatorId(user.getUId());
+        taskLog.setLastOperator(user.getName());
+        taskLog.setMovement(String.format("服务商已接单，等待维修工程师确认"));
+        taskLogMapper.insertSelective(taskLog);
+        log.info("服务商已接单，等待维修工程师确认");
+
+        return "success";
+    }
+
 //    @Override
 //    public void serviceProviderRejectTask(String data) {
 //        JsonObject json = new JsonParser().parse(data).getAsJsonObject();
@@ -385,107 +394,117 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //        opService.logger(op);
 //
 //    }
-//
-//    @Override
-//    public void maintenanceWorkerReceiveTask(String data) {
-//        JsonObject json = new JsonParser().parse(data).getAsJsonObject();
-//
-//        // 获取工单信息，工单状态改为维修中
-//        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.WeiXiu);
-//        if (task == null) {
-//            return;
-//        }
-//
-//        // 通知报修用户
-//        Long workerId = json.get("workerId").getAsLong();
-//        Long uId = task.getUId();
-//        new AuditResultMsg().send(workerId, uId, task,"维修工已接单，请等待维修工联系");
-//        // 通知服务提供商
-//        Long SPId = json.get("SPId").getAsLong();
-//        new AuditResultMsg().send(workerId, SPId, task,"维修工已接单");
-//
-//        // 记录此次操作，工单状态追踪
-//        Operation op = new Operation();
-//        op.setOperator(workerId);
-//        op.setTaskId(taskId);
-//        op.setInfo("维修工已接单，请等待维修工联系");
-//        opService.logger(op);
-//
-//    }
-//
-//    @Override
-//    public void maintenanceWorkerRejectTask(String data) {
-//        JsonObject json = new JsonParser().parse(data).getAsJsonObject();
-//
-//        // 获取工单信息，工单状态保持待执行
-//        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.getTaskInfo(taskId);
-//        if (task == null) {
-//            return;
-//        }
-//
-//        // 重新分派维修工
-//        Long SPId = json.get("SPId").getAsLong();
-//        Long leaderId = json.get("leaderId").getAsLong();
-//        Long workerId = dispatchTask(taskId);  // TODO 派发任务
-//        if (workerId == null) {
-//            System.out.println("维修工正忙，请联系服务提供商更换维修工");
-//        }
-//        for (MdmcTask task: task.getTaskList()){
-//            task.setWorkerId(workerId);
-//        }
-//
-//        // 工单状态变为待执行
-//        task = taskService.changeTaskStatus(taskId, status.ZhiXing);
-//
-//        // 通知报修用户
-//        Long uId = task.getUId();
-//        new AuditResultMsg().send(workerId, uId, task,"维修工正忙，当前转单中");
-//
-//        // 记录此次操作，工单状态追踪
-//        Operation op = new Operation();
-//        op.setOperator(workerId);
-//        op.setTaskId(taskId);
-//        op.setInfo("维修工正忙，当前转单中");
-//        opService.logger(op);
-//
-//    }
-//
-//    @Override
-//    public void maintenanceWorkerEnsureService(String data) {
-//        JsonObject json = new JsonParser().parse(data).getAsJsonObject();
-//
-//        // 获取工单信息，工单状态改为待确认
-//        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.getTaskInfo(taskId);
-//        if (task == null) {
-//            return;
-//        }
-//
-//        Long taskId = json.get("taskId").getAsLong();
-//        Boolean result = json.get("result").getAsBoolean(); // 维修结果
-//        String record = json.get("record").getAsString();   // 维修记录
-//        task.setResult(result);
-//        task.setRecord(record);
-//
-//        // 工单状态改为待报修用户确认服务
-//        task = taskService.changeTaskStatus(taskId, status.QueRenFuWu);
-//
-//        // 通知报修用户
-//        Long uId = task.getUId();
-//        Long workerId = task.getTaskList().get(0).getWorkerId();
-//        new AuditResultMsg().send(workerId, uId, task,"维修服务已完成，请您及时确认");
-//
-//        // 记录此次操作，工单状态追踪
-//        Operation op = new Operation();
-//        op.setOperator(workerId);
-//        op.setTaskId(taskId);
-//        op.setInfo("维修服务已完成，等待报修人确认");
-//        opService.logger(op);
-//
-//
-//    }
+
+    @Override
+    public String  maintenanceWorkerReceiveTask(Long taskId, Long mId, int op) {
+
+        // 获取工单信息，工单状态改为维修中
+        MdmcTask task = changeTaskStatus(taskId, MdmcTaskStatusEnum.WeiXiu.getType());
+        if (task == null) {
+            log.error("维修工单{}不存在", taskId);
+            return String.format("维修工单%s不存在", taskId);
+        }
+
+        // 修改任务子项状态为维修中
+        List<MdmcTaskItem> taskItems = itemMapper.selectByTaskId(taskId);
+        for (MdmcTaskItem item: taskItems){
+            item.setStatus(task.getStatus());
+            itemMapper.updateByPrimaryKeySelective(item);
+        }
+
+        User user = new User().getUserInfo(); // todo 维修工信息
+        MdmcTaskLog taskLog = new MdmcTaskLog();
+        taskLog.setLastOperatorId(user.getUId());
+        taskLog.setLastOperator(user.getName());
+        taskLog.setMovement(String.format("维修工程师已接单 \n姓名{}, 手机号{}", user.getName(), user.getPhone()));
+        taskLogMapper.insertSelective(taskLog);
+        log.info("维修工程师已接单");
+
+        return "success";
+    }
+
+    @Override
+    public String maintenanceWorkerRejectTask(Long taskId, Long mId, int op) {
+
+        // 获取工单信息
+        MdmcTask task = getTaskInfo(taskId);
+        if (task == null) {
+            log.error("维修工单{}不存在", taskId);
+            return String.format("维修工单%s不存在", taskId);
+        }
+
+
+        // 派发任务:根据服务提供商和报修单位签订的合同，以及履行改合同义务的维修列表，指派维修工
+        Long workerId = dispatchTask(taskId);  // TODO 派发任务
+        if (workerId == null) {
+            log.info("维修工正忙，请联系服务提供商更换维修工");
+        }
+        task.setMaintainerId(workerId);
+        List<MdmcTaskItem> taskItems = itemMapper.selectByTaskId(taskId);
+        for (MdmcTaskItem item: taskItems){
+            item.setMaintainerId(workerId);
+//            item.setStatus(MdmcTaskStatusEnum.ZhiXing.getType());
+            itemMapper.updateByPrimaryKeySelective(item);
+        }
+
+        // 最晚完成时间，接单时间加一周
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.DAY_OF_WEEK, 1); //增加一周
+        task.setDeadline(cal.getTime());
+
+        // 工单状态变为待执行
+//        task.setStatus(MdmcTaskStatusEnum.ZhiXing.getType());
+        task = saveTask(task);
+
+        User user = new User().getUserInfo(); // todo 审核人信息
+        MdmcTaskLog taskLog = taskLogMapper.selectLatestByTaskId(taskId);
+        taskLog.setLastOperatorId(user.getUId());
+        taskLog.setLastOperator(user.getName());
+        taskLog.setMovement(String.format("服务商已接单，等待维修工程师确认"));
+        if (taskLog.isNew()){
+            taskLogMapper.insertSelective(taskLog);
+        } else {
+            taskLogMapper.updateByPrimaryKeySelective(taskLog);
+        }
+
+        log.info("服务商已接单，等待维修工程师确认");
+
+        return "success";
+    }
+
+    @Override
+    public String maintenanceWorkerEnsureService(Long taskId, Long mId, int op) {
+
+        // 获取工单信息，工单状态改为待确认
+        MdmcTask task = getTaskInfo(taskId);
+        if (task == null) {
+            log.error("维修工单{}不存在", taskId);
+            return String.format("维修工单%s不存在", taskId);
+        }
+
+        Boolean result = json.get("result").getAsBoolean(); // 维修结果
+        String record = json.get("record").getAsString();   // 维修记录
+        task.setResult(result);
+        task.setRecord(record);
+
+        // 工单状态改为待报修用户确认服务
+        task = changeTaskStatus(taskId, MdmcTaskStatusEnum.QueRenFuWu.getType());
+
+        // 通知报修用户
+        Long uId = task.getUId();
+        Long workerId = task.getTaskList().get(0).getWorkerId();
+        new AuditResultMsg().send(workerId, uId, task,"维修服务已完成，请您及时确认");
+
+        // 记录此次操作，工单状态追踪
+        Operation op = new Operation();
+        op.setOperator(workerId);
+        op.setTaskId(taskId);
+        op.setInfo("维修服务已完成，等待报修人确认");
+        opService.logger(op);
+
+
+    }
 //
 //    @Override
 //    public void maintenanceWorkerExchangeTask(String data) {
@@ -510,7 +529,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //        }
 //
 //        // 工单状态变为待执行
-//        task = taskService.changeTaskStatus(taskId, status.ZhiXing);
+//        task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.ZhiXing);
 //
 //        // 通知报修用户
 //        Long uId = task.getUId();
@@ -557,7 +576,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        deviceTaskService.saveDeviceTask(deviceTask);
 //
-//        task = taskService.changeTaskStatus(taskId, status.SPShenHeZhangDan);
+//        task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.SPShenHeZhangDan);
 //
 //        // 通知报修用户
 //        Long workerId = json.get("workerId").getAsLong();
@@ -581,7 +600,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变为待验收
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.YanShou);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.YanShou);
 //        if (task == null) {
 //            return;
 //        }
@@ -608,7 +627,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变为待审核人确认账单
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.LDShenHeZhangDan);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.LDShenHeZhangDan);
 //        if (task == null) {
 //            return;
 //        }
@@ -658,7 +677,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变为维修中
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.WeiXiu);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.WeiXiu);
 //        if (task == null) {
 //            return;
 //        }
@@ -685,7 +704,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变为维修中
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.WeiXiu);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.WeiXiu);
 //        if (task == null) {
 //            return;
 //        }
@@ -714,7 +733,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变维修中
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.WeiXiu);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.WeiXiu);
 //        if (task == null) {
 //            return;
 //        }
@@ -742,7 +761,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变成待评价
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.PingJia);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.PingJia);
 //        if (task == null) {
 //            return;
 //        }
@@ -777,7 +796,7 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //
 //        // 获取工单信息, 工单状态变成已完成
 //        Long taskId = json.get("taskId").getAsLong();
-//        MdmcTask task = taskService.changeTaskStatus(taskId, status.WanCheng);
+//        MdmcTask task = taskService.changeTaskStatus(taskId, MdmcTaskStatusEnum.WanCheng);
 //        if (task == null) {
 //            return;
 //        }
@@ -800,16 +819,8 @@ public class MdmcTaskServiceImpl implements MdmcTaskService {
 //        opService.logger(op);
 //    }
 //
-//    @Override
-//    public Long dispatchTask(Long taskId) {
-//
-//        MdmcTask task = taskService.getTaskInfo(taskId);
-//        if (task == null) {
-//            System.err.println(new StringBuilder().append("无法分配维修工，工单").append(taskId).append("不存在"));
-//            return null;
-//        }
-//
-//        // todo 根据合同设置的维修工名单和故障类型，随机选择一位维修工，后面设计更好的分配策略\
-//        return keyConstructor.nextGlobalId();
-//    }
+    @Override
+    public Long dispatchTask(Long taskId) {
+        return 1L;
+    }
 }
